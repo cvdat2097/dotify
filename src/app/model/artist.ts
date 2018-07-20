@@ -2,10 +2,13 @@ import { Playlist } from './playlist';
 import { User } from './user';
 
 export class Artist {
-    name: string;
-    description: string;
-    categories: string[];
-    avatarURL: string;
-    albums: Playlist[];
-    followers: User[];
+    constructor(
+        public id: number,
+        public name: string,
+        public description: string,
+        public categories: string[],
+        public avatarURL: string,
+        public albums: Playlist[] = [],
+        public followers: User[] = []
+    ) { }
 }

@@ -1,9 +1,13 @@
 import { Song } from './song';
 
 export class Playlist {
-    name: string;
-    description: string;
-    likes: number;
-    playbackTimes: number;
-    songs: Song[];
+    constructor(
+        public id: number,
+        public name: string,
+        public description: string,
+        public songs: Song[] = [],
+        public avatarURL: string = "",
+        public likes: number = 0,
+        public playbackTimes: number = 0,
+    ) { }
 }

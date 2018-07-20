@@ -1,0 +1,41 @@
+<div class="container">
+    <!-- HEADER -->
+    <header>
+        <!-- LOGO -->
+        <div class="logo">
+            <h1>Dotify</h1>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="login">
+            <button>LOGIN</button>
+        </div>
+    </header>
+
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/artists">Artists</a>
+            </li>
+            <li>
+                <a routerLink="#">Songs</a>
+            </li>
+            <li>
+                <a routerLink="#">Queue</a>
+            </li>
+            <li>
+                <a routerLink="#">Playlists</a>
+            </li>
+            <li>
+                <a routerLink="#">My Playlist</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

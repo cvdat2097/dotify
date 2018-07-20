@@ -1,0 +1,22 @@
+.banner {
+    border: 1px solid greenyellow;
+    height: 400px;
+
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.banner * {
+    color: white;
+}
+
+.albums-container {
+    margin: 20px;
+}

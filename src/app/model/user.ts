@@ -1,9 +1,12 @@
 import { Playlist } from './playlist';
 
 export class User {
-    username: string;
-    password: string;
-    name: string;
-    avatarURL: string;
-    playlists: Playlist[];
+    constructor(
+        public id: number,
+        public username: string,
+        public password: string,
+        public name: string,
+        public avatarURL: string,
+        public playlists: Playlist[] = [],
+    ) { }
 }

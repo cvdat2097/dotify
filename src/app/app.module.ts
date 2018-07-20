@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
@@ -12,6 +13,11 @@ import { SettingsComponent } from './settings/settings.component';
 import { SongsComponent } from './songs/songs.component';
 import { SliderComponent } from './shared/forms/slider/slider.component';
 import { SlideToggleComponent } from './shared/forms/slide-toggle/slide-toggle.component';
+
+import { DatabaseService } from './shared/services/database.service';
+
+import { BackgroundImageDirective } from './shared/directives/background-image.directive';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +32,15 @@ import { SlideToggleComponent } from './shared/forms/slide-toggle/slide-toggle.c
     SettingsComponent,
     SongsComponent,
     SliderComponent,
-    SlideToggleComponent
+    SlideToggleComponent,
+    BackgroundImageDirective,
+    PlaylistComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<div class="container">
+    <!-- Banner -->
+    <div class="banner" *ngIf="artist" [background-image]="artist.avatarURL">
+        <h2>{{artist.name}}</h2>
+        <p>{{artist.description}}</p>
+        <button>PLAY SONGS</button>
+    </div>
+
+    <!-- ALBUMS -->
+    <div class="albums-container" *ngFor="let album of artist.albums">
+    <!-- <div class="albums-container"> -->
+        <!-- <app-playlist [playlist]="artist.albums[0]"></app-playlist> -->
+        <app-playlist [playlist]="album"></app-playlist>
+    </div>
+
+</div>

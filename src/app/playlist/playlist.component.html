@@ -1,0 +1,42 @@
+<div class="container">
+  <!-- HEADER -->
+  <div class="playlist-header">
+    <!-- AVATAR -->
+    <div class="playlist-avatar">
+      <img src="{{playlist.avatarURL}}" alt="">
+    </div>
+
+    <!-- INFO -->
+    <div class="playlist-info">
+      <h3>{{playlist.name}}</h3>
+      <p>{{playlist.description}}</p>
+      <p>Like: {{playlist.likes}}</p>
+      <p>Played: {{playlist.playbackTimes}}</p>
+    </div>
+
+    <!-- PLAYBACK CONTROLLER -->
+    <div class="playlist-controller">
+      <button>PLAY</button>
+    </div>
+  </div>
+
+  <!-- SONG LIST -->
+  <div class="playlist-songs">
+    <div class="song-container" *ngFor="let song of playlist.songs">
+      <!-- BUTTON -->
+      <div class="song-button">
+        <button>PLAY</button>
+      </div>
+
+      <!-- SONG NAME -->
+      <div class="song-name">
+        {{song.name}}
+      </div>
+
+      <!-- MENU -->
+      <div class="song-menu">
+        <button>...</button>
+      </div>
+    </div>
+  </div>
+</div>
