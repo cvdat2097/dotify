@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Playlist } from '../model/playlist';
+import { PlaybackService } from '../shared/services/playback.service';
 
 @Component({
     selector: 'app-my-playlist',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
 })
 
 export class MyPlaylistComponent {
-
+    myPlaylists: Playlist[];
+    
+    constructor(private pbService: PlaybackService) {
+        this.myPlaylists = pbService.GetMyPlaylists();
+    }
 }

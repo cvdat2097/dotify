@@ -1,0 +1,13 @@
+<div class="song-info" *ngIf="song">
+    <p>{{song.name}}</p>
+</div>
+<audio #mp3File>
+    <source type="audio/mp3">
+</audio>
+<div class="container">
+    <button id="previous-button" (click)="PreviousSong()">&lt;&lt;</button>
+    <button id="play-pause-button" (click)="TogglePlay()">Play/Pause</button>
+    <button id="next-button" (click)="NextSong()">&gt;&gt;</button>
+    <a id="queue-button" routerLink="/queue">Now Playing</a>
+    <input id="volume-slider" type="range" min="1" max="100" value="{{volume}}" (input)="ChangeVolume($event)">
+</div>

@@ -3,7 +3,7 @@
     <header>
         <!-- LOGO -->
         <div class="logo">
-            <h1>Dotify</h1>
+            <h1><a routerLink="/">Dotify</a></h1>
         </div>
 
         <!-- LOGIN -->
@@ -18,24 +18,29 @@
         <ul>
             <li>
                 <a routerLink="/artists">Artists</a>
-            </li>
+            </li><br />
             <li>
-                <a routerLink="#">Songs</a>
-            </li>
+                <a routerLink="/songs">Songs</a>
+            </li><br />
             <li>
-                <a routerLink="#">Queue</a>
-            </li>
+                <a routerLink="/queue">Queue</a>
+            </li><br />
             <li>
-                <a routerLink="#">Playlists</a>
-            </li>
+                <a routerLink="/playlists">Playlists</a>
+            </li><br />
             <li>
-                <a routerLink="#">My Playlist</a>
-            </li>
+                <a routerLink="/my-playlist">My Playlist</a>
+            </li><br />
         </ul>
     </nav>
 
     <!-- CONTENT -->
     <div class="content">
         <router-outlet></router-outlet>
+    </div>
+
+    <!-- PLAYBACK BAR -->
+    <div class="mp3-player-container">
+        <app-mp3-player></app-mp3-player>
     </div>
 </div>

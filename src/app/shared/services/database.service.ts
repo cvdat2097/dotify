@@ -4,6 +4,7 @@ import { Artist } from '../../model/artist';
 import { Playlist } from '../../model/playlist';
 import { Song } from '../../model/song';
 import { User } from '../../model/user';
+import { Subject, Observable } from 'rxjs';
 
 class MyClass {
     constructor(public name: string) { }
@@ -13,15 +14,19 @@ class MyClass {
     providedIn: 'root',
 })
 
-export class DatabaseService {
+export class DatabaseService{
     dbSong: Song[] = [];
     dbPlaylist: Playlist[] = [];
     dbUser: User[] = [];
     dbArtist: Artist[] = [];
+    queue: Playlist = new Playlist(0, 'queue', 'Now playing songs');
+    
 
     constructor() {
         this.FetchData();
+        
     }
+
 
     // Getters
     GetSongs() {
@@ -54,10 +59,10 @@ export class DatabaseService {
 
     FetchData() {
         this.dbSong = [
-            new Song(1, 'Song 1', 'Artist1', '#'),
-            new Song(2, 'Song 2', 'Artist2', '#'),
-            new Song(3, 'Song 3', 'Artist3', '#'),
-            new Song(4, 'Song 4', 'Artist4', '#'),
+            new Song(1, 'Vai lan don dua', '365 Band', '/assets/mp3/vai-lan-don-dua.mp3'),
+            new Song(2, 'Treat you better', 'Shawn Mendes', '/assets/mp3/treat-you-better.mp3'),
+            new Song(3, 'Hon Anh', 'Trang - Khoa Vu', '/assets/mp3/hon-anh.mp3'),
+            new Song(4, 'Meow Meow Meow', 'Unknown', '/assets/mp3/meow-meow-meow.mp3'),
         ];
 
         this.dbPlaylist = [

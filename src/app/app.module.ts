@@ -7,7 +7,7 @@ import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { ArtistComponent } from './artists/artists.component';
 import { LoginComponent } from './login/login.component';
 import { MyPlaylistComponent } from './my-playlist/my-playlist.component';
-import { PlaybackBarComponent } from './playback-bar/playback-bar.component';
+import { Mp3PlayerComponent } from './mp3-player/mp3-player.component';
 import { QueueComponent } from './queue/queue.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SongsComponent } from './songs/songs.component';
@@ -18,6 +18,7 @@ import { DatabaseService } from './shared/services/database.service';
 
 import { BackgroundImageDirective } from './shared/directives/background-image.directive';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistsComponent } from './playlists/playlists.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { PlaylistComponent } from './playlist/playlist.component';
     ArtistComponent,
     LoginComponent,
     MyPlaylistComponent,
-    PlaybackBarComponent,
+    Mp3PlayerComponent,
     QueueComponent,
     QueueComponent,
     SettingsComponent,
@@ -34,7 +35,8 @@ import { PlaylistComponent } from './playlist/playlist.component';
     SliderComponent,
     SlideToggleComponent,
     BackgroundImageDirective,
-    PlaylistComponent
+    PlaylistComponent,
+    PlaylistsComponent
   ],
   imports: [
     BrowserModule,

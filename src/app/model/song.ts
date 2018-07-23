@@ -6,4 +6,12 @@ export class Song {
         public fileURL: string,
         public playbackTimes: number = 0,
     ) { }
+
+    Play() {
+
+    }
+
+    Pause() {
+        
+    }
 }

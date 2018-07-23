@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="song-container" *ngFor="let song of songs; let i = index">
+        <div class="song-id">
+            {{i + 1}}
+        </div>
+        <div class="song-name">
+            {{song.name}}
+        </div>
+        <div class="song-artist">
+            {{song.artistName}}
+        </div>
+        <div class="play-button">
+            <button (click)="PlaySong(song)">Add to Queue</button>
+        </div>
+    </div>
+</div>
