@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Playlist } from '../model/playlist';
+import { Playlist } from '../shared/model/playlist';
 import { PlaybackService } from '../shared/services/playback.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { PlaybackService } from '../shared/services/playback.service';
 
 export class MyPlaylistComponent {
     myPlaylists: Playlist[];
-    
+
     constructor(private pbService: PlaybackService) {
-        this.myPlaylists = pbService.GetMyPlaylists();
+        this.myPlaylists = this.pbService.GetMyPlaylists();
     }
 }

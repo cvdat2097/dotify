@@ -1,10 +1,9 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { Artist } from '../../model/artist';
-import { Playlist } from '../../model/playlist';
-import { Song } from '../../model/song';
-import { User } from '../../model/user';
-import { Subject, Observable } from 'rxjs';
+import { Artist } from '../../shared/model/artist';
+import { Playlist } from '../../shared/model/playlist';
+import { Song } from '../../shared/model/song';
+import { User } from '../../shared/model/user';
 
 class MyClass {
     constructor(public name: string) { }
@@ -18,15 +17,11 @@ export class DatabaseService{
     dbSong: Song[] = [];
     dbPlaylist: Playlist[] = [];
     dbUser: User[] = [];
-    dbArtist: Artist[] = [];
-    queue: Playlist = new Playlist(0, 'queue', 'Now playing songs');
-    
+    dbArtist: Artist[] = [];    
 
     constructor() {
         this.FetchData();
-        
     }
-
 
     // Getters
     GetSongs() {

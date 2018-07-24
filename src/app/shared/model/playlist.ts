@@ -9,7 +9,6 @@ export class Playlist {
         public avatarURL: string = "",
         public likes: number = 0,
         public playbackTimes: number = 0,
-        private currentSong: number = 0,
     ) { }
 
     AddSong(song: Song) {
@@ -20,21 +19,19 @@ export class Playlist {
         this.songs.splice(index);
     }
 
-    GetNextSong() {
-        if (this.currentSong + 1 < this.songs.length) {
-            this.currentSong++;
-            return this.songs[this.currentSong];
+    GetSong(id: number) {
+        if (id < this.songs.length && id >= 0) {
+            return this.songs[id];
         } else {
             return null;
         }
     }
 
-    GetPreviousSong() {
-        if (this.currentSong - 1 >= 0) {
-            this.currentSong--;
-            return this.songs[this.currentSong];
-        } else {
-            return null;
-        }
+    IsEmpty() {
+        return this.songs.length == 0;
     }
+
+    HaveSong(song: Song) {
+        return this.songs.indexOf(song) != -1;
+    } 
 }

@@ -10,7 +10,8 @@
             {{song.artistName}}
         </div>
         <div class="play-button">
-            <button (click)="PlaySong(song)">Add to Queue</button>
+            <button (click)="this.pbService.AddToQueue(song, true)">Play</button>
+            <button (click)="this.pbService.AddToQueue(song)">+</button>
         </div>
     </div>
 </div>

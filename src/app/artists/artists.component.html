@@ -9,7 +9,7 @@
             <h3>
                 <a routerLink="/artists/detail" [queryParams]="{id: artist.id}">{{artist.name}}</a>
             </h3>
-            <div class="categoriy-box" *ngFor="let category of artist.categories">
+            <div class="category-box" *ngFor="let category of artist.categories">
                 {{category}}
             </div>
         </div>

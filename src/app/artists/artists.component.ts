@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Artist } from '../model/artist';
+import { Artist } from '../shared/model/artist';
+
 
 import { DatabaseService } from '../shared/services/database.service';
 
@@ -14,6 +15,6 @@ export class ArtistComponent {
     artists: Artist[] = [];
 
     constructor(private dbService: DatabaseService) {
-        this.artists = dbService.GetArtists();
+        this.artists = this.dbService.GetArtists();
     }
 }

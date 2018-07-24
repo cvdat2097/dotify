@@ -14,6 +14,5 @@ export class BackgroundImageDirective implements AfterViewInit {
 
     ngAfterViewInit() {
         this.renderer.setStyle(this.el.nativeElement, 'background-image', 'url("' + this.imageURL + '")');
-        // this.renderer.setStyle(this.el.nativeElement, 'background', '');
     }
 }

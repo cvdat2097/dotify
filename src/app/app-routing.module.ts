@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ArtistComponent } from './artists/artists.component';
-import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
+import { ArtistDetailComponent } from './artists/artist-detail/artist-detail.component';
 import { LoginComponent } from './login/login.component';
 import { MyPlaylistComponent } from './my-playlist/my-playlist.component';
 import { QueueComponent } from './queue/queue.component';

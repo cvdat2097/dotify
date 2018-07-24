@@ -1,8 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
-import { DatabaseService } from '../shared/services/database.service';
-import { Playlist } from '../model/playlist';
-import { Song } from '../model/song';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+
+import { Playlist } from '../shared/model/playlist';
 import { PlaybackService } from '../shared/services/playback.service';
 
 @Component({
@@ -14,7 +12,7 @@ import { PlaybackService } from '../shared/services/playback.service';
 export class QueueComponent {
     queue: Playlist;
 
-    constructor(private dbService: DatabaseService, pbService: PlaybackService) {
+    constructor(pbService: PlaybackService) {
         this.queue = pbService.GetQueue();
     }
 }

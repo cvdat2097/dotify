@@ -1,8 +1,8 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { DatabaseService } from '../shared/services/database.service';
-import { Artist } from '../model/artist';
+import { DatabaseService } from '../../shared/services/database.service';
+import { Artist } from '../../shared/model/artist';
 
 @Component({
     selector: 'app-artist-detail',
@@ -12,12 +12,10 @@ import { Artist } from '../model/artist';
 
 export class ArtistDetailComponent implements OnInit {
     artist: Artist;
-    @ViewChild('banner') banner: HTMLDivElement;
 
     constructor(
         private route: ActivatedRoute,
         private dbService: DatabaseService,
-        private renderer: Renderer2
     ) { }
 
     ngOnInit() {
@@ -28,6 +26,4 @@ export class ArtistDetailComponent implements OnInit {
             }
         )
     }
-
-
 }
