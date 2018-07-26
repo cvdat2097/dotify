@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { BackgroundImageDirective } from './shared/directives/background-image.d
 import { PlaylistComponent } from './shared/components/playlist/playlist.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SongComponent } from './shared/components/song/song.component';
+import { CreatePlaylistComponent } from './playlists/create-playlist/create-playlist.component';
+import { AddToPlaylistComponent } from './playlists/add-to-playlist/add-to-playlist.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,13 @@ import { SongComponent } from './shared/components/song/song.component';
     BackgroundImageDirective,
     PlaylistComponent,
     PlaylistsComponent,
-    SongComponent
+    SongComponent,
+    CreatePlaylistComponent,
+    AddToPlaylistComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [DatabaseService],

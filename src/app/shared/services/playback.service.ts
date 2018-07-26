@@ -8,7 +8,6 @@ import { Subject, Observable } from 'rxjs';
 })
 export class PlaybackService {
     queue: Playlist = new Playlist(0, 'queue', 'Now playing...');
-    myPlaylists: Playlist[] = [this.queue];
     songsToPlay: Subject<Song> = new Subject<Song>();
     currentSong: number = -1;
 
@@ -42,10 +41,6 @@ export class PlaybackService {
 
     GetQueue() {
         return this.queue;
-    }
-
-    GetMyPlaylists() {
-        return this.myPlaylists;
     }
 
     NextSong() {

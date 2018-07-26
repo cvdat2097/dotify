@@ -1,0 +1,23 @@
+.container {
+    width: 500px;
+    height: 350px;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container  * {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

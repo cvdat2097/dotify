@@ -13,11 +13,11 @@ class MyClass {
     providedIn: 'root',
 })
 
-export class DatabaseService{
+export class DatabaseService {
     dbSong: Song[] = [];
     dbPlaylist: Playlist[] = [];
     dbUser: User[] = [];
-    dbArtist: Artist[] = [];    
+    dbArtist: Artist[] = [];
 
     constructor() {
         this.FetchData();
@@ -37,6 +37,12 @@ export class DatabaseService{
     GetPlaylist(id: number) {
         return this.dbPlaylist[id - 1];
     }
+    CreateNewPlaylist(userID: number, name: string, description: string = "") {
+        var x = new Playlist(10, name, description)
+        this.GetUser(userID).playlists.push(
+            x
+        );
+    }
 
     GetUsers() {
         return this.dbUser;
@@ -49,7 +55,7 @@ export class DatabaseService{
         return this.dbArtist;
     }
     GetArtist(id: number) {
-        return this.dbArtist[id - 1];
+        return this.dbArtist[id];
     }
 
     FetchData() {

@@ -11,7 +11,8 @@
         </div>
         <div class="play-button">
             <button (click)="this.pbService.AddToQueue(song, true)">Play</button>
-            <button (click)="this.pbService.AddToQueue(song)">+</button>
+            <button (click)="this.pbService.AddToQueue(song)">+Queue</button>
+            <button (click)="AddToPlaylist(song)">+Playlist</button>
         </div>
     </div>
 </div>
