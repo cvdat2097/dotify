@@ -9,17 +9,14 @@ import { Subject, Observable } from 'rxjs';
 export class PlaybackService {
     queue: Playlist = new Playlist(0, 'queue', 'Now playing...');
     songsToPlay: Subject<Song> = new Subject<Song>();
-    currentSong: number = -1;
+    currentSong: number = 0;
 
     constructor() {
     }
 
     AddToQueue(song: Song, play: boolean = false) {
         // TODO - Bug: CurrentSong in queue
-        if (this.queue.IsEmpty() || play) {
-
-            this.SendToPlayer(song);
-        }
+        var queueIsEmpty: boolean = this.queue.IsEmpty();
 
         if (!this.queue.HaveSong(song)) {
             this.queue.AddSong(song);
@@ -28,11 +25,15 @@ export class PlaybackService {
                 console.log('This song is currently in the queue');
             }
         }
+
+        if (queueIsEmpty || play) {
+            this.SendToPlayer(song);
+            this.currentSong = this.queue.songs.indexOf(song);
+        }
     }
 
     SendToPlayer(song: Song) {
         this.songsToPlay.next(song);
-        this.currentSong = this.queue.songs.indexOf(song);
     }
 
     GetSongsToPlay(): Observable<Song> {
