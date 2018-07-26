@@ -9,12 +9,17 @@
         </div>
 
         <!-- CREATE NEW PLAYLIST -->
-        <div *ngIf="userLoggedIn">
+        <div *ngIf="loggedInUser">
             <button (click)="ShowModal('app-create-playlist')">Create playlist</button>
         </div>
 
         <!-- LOGIN -->
-        <div class="login">
+        <div class="login" *ngIf="loggedInUser">
+            <p>Hello, {{loggedInUser.name}}</p>
+            <button (click)="Logout()">LOGOUT</button>
+
+        </div>
+        <div class="login" *ngIf="!loggedInUser">
             <button (click)="ShowModal('app-login')">LOGIN</button>
 
             <!-- SIGNUP -->
@@ -70,7 +75,7 @@
     <div class="modal-overlay" *ngIf="modal" (click)="HideModal($event);">
         <div class="modal-container" [ngSwitch]="modal">
             <app-create-playlist *ngSwitchCase="'app-create-playlist'" (onCloseModal)="HideModal($event)"></app-create-playlist>
-            <app-add-to-playlist [song]="modalParams" [userID]="1" *ngSwitchCase="'app-add-to-playlist'" (onCloseModal)="HideModal($event)"></app-add-to-playlist>
+            <app-add-to-playlist [song]="modalParams" *ngSwitchCase="'app-add-to-playlist'" (onCloseModal)="HideModal($event)"></app-add-to-playlist>
             <app-login *ngSwitchCase="'app-login'"></app-login>
             <app-signup *ngSwitchCase="'app-signup'"></app-signup>
         </div>

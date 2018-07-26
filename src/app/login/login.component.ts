@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ModalService } from '../shared/services/modal.service';
 import { DatabaseService } from '../shared/services/database.service';
+import { ServerService } from '../shared/services/server.service';
 
 @Component({
     selector: 'app-login',
@@ -29,12 +30,14 @@ export class LoginComponent {
     constructor(
         private formBuilder: FormBuilder,
         private mdService: ModalService,
-        private dbService: DatabaseService
+        private dbService: DatabaseService,
+        private svService: ServerService
     ) { }
 
     onSubmit() {
         if (this.dbService.Login(this._username.value, this._password.value)) {
             console.log('Login successfully!');
+            this.svService.Login(this.dbService.GetUserByUsername(this._username.value));
         } else {
             console.log('Login failed!');
         }

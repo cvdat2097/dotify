@@ -33,9 +33,9 @@ export class DatabaseService {
     GetPlaylist(id: number) {
         return this.dbPlaylist[id - 1];
     }
-    CreateNewPlaylist(userID: number, name: string, description: string = "") {
+    CreateNewPlaylist(username: string, name: string, description: string = "") {
         var x = new Playlist(10, name, description)
-        this.GetUser(userID).playlists.push(
+        this.GetUserByUsername(username).playlists.push(
             x
         );
     }
@@ -46,6 +46,17 @@ export class DatabaseService {
     GetUser(id: number) {
         return this.dbUser[id - 1];
     }
+    GetUserByUsername(username: string) {
+        for (let user of this.dbUser) {
+            if (user.username === username) {
+                return user;
+            }
+        }
+        
+        return null;
+    }
+
+
     Login(username: string, password: string) {
         for (let x of this.dbUser) {
             if (x.username === username) {

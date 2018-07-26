@@ -4,6 +4,7 @@ import { DatabaseService } from '../../shared/services/database.service';
 import { Playlist } from '../../shared/model/playlist';
 import { User } from '../../shared/model/user';
 import { ModalService } from '../../shared/services/modal.service';
+import { ServerService } from '../../shared/services/server.service';
 
 @Component({
   selector: 'app-add-to-playlist',
@@ -12,24 +13,29 @@ import { ModalService } from '../../shared/services/modal.service';
 })
 export class AddToPlaylistComponent implements OnInit {
   @Input('song') song: Song;
-  @Input('userID') userID: number;
   @Output('onCloseModal') closeModalEvent = new EventEmitter();
-  x: string;
 
-  user: User;
+
+  user: User = null;
 
   constructor(
     private dbService: DatabaseService,
-    private mdService: ModalService
+    private mdService: ModalService,
+    private svService: ServerService
   ) {
   }
 
   ngOnInit() {
-    this.user = this.dbService.GetUser(this.userID);
+    this.svService.GetLoggedUser().subscribe(
+      (user: User) => {
+        this.user = user;
+      }
+    )
   }
 
   AddToPlaylist(playlistID: number) {
-    this.dbService.GetUser(this.userID).playlists[playlistID].AddSong(this.song);
+
+    this.dbService.GetUserByUsername(this.user.username).playlists[playlistID].AddSong(this.song);
     console.log('Song added');
     return true;
   }

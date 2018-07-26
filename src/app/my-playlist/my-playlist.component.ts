@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Playlist } from '../shared/model/playlist';
-import { PlaybackService } from '../shared/services/playback.service';
 import { DatabaseService } from '../shared/services/database.service';
+import { ServerService } from '../shared/services/server.service';
+import { User } from '../shared/model/user';
 
 @Component({
     selector: 'app-my-playlist',
@@ -10,9 +11,22 @@ import { DatabaseService } from '../shared/services/database.service';
 })
 
 export class MyPlaylistComponent {
-    myPlaylists: Playlist[];
+    myPlaylists: Playlist[] = [];
 
-    constructor(private dbService: DatabaseService, private pbService: PlaybackService) {
-        this.myPlaylists = this.dbService.GetUser(1).playlists;
+    constructor(
+        private dbService: DatabaseService,
+        private svService: ServerService
+    ) {
+        this.dbService.SignUp('bamboak', '123456', 'Dat', '#');
+        this.svService.GetLoggedUser().subscribe(
+            (user: User) => {
+                if (user != null) {
+                    this.myPlaylists = this.dbService.GetUserByUsername(user.username).playlists;
+                } else {
+                    this.myPlaylists = [];
+                }
+            }
+        )
+
     }
 }

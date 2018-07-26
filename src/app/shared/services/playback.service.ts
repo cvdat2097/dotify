@@ -14,7 +14,6 @@ export class PlaybackService {
     constructor() {
     }
 
-    // Observable
     AddToQueue(song: Song, play: boolean = false) {
         // TODO - Bug: CurrentSong in queue
         if (this.queue.IsEmpty() || play) {

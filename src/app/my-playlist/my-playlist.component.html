@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngIf="!myPlaylists">
+    <div *ngIf="!(myPlaylists.length)">
         You have no playlist!
     </div>
     <div class="playlist-container" *ngFor="let playlist of myPlaylists">

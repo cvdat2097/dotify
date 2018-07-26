@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Select playlist</h1>
-  <form (ngSubmit)="AddToPlaylist(playlistForm.value.playlistID)" #playlistForm="ngForm">
+  <!-- USER DIDN'T LOGGED IN -->
+  <p *ngIf="!user">Please Log in first</p>
+
+  <!-- USER LOGGED IN -->
+  <form *ngIf="user" (ngSubmit)="AddToPlaylist(playlistForm.value.playlistID)" #playlistForm="ngForm">
     <div class="form-group">
       <div *ngFor="let playlist of user.playlists; let i = index">
         <input type="radio" value="{{i}}" name="playlistID" ngModel>
