@@ -5,10 +5,6 @@ import { Playlist } from '../../shared/model/playlist';
 import { Song } from '../../shared/model/song';
 import { User } from '../../shared/model/user';
 
-class MyClass {
-    constructor(public name: string) { }
-}
-
 @Injectable({
     providedIn: 'root',
 })
@@ -50,6 +46,21 @@ export class DatabaseService {
     GetUser(id: number) {
         return this.dbUser[id - 1];
     }
+    Login(username: string, password: string) {
+        for (let x of this.dbUser) {
+            if (x.username === username) {
+                if (x.password === password) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    SignUp(username: string, password:string, name:string, avatarURL:string) {
+        this.dbUser.push(new User(5, username, password, name, avatarURL));
+    }
 
     GetArtists() {
         return this.dbArtist;
@@ -75,10 +86,10 @@ export class DatabaseService {
         ];
 
         this.dbUser = [
-            new User(1, 'user1', '123', 'Nguyen Van A', '#', [this.dbPlaylist[0], this.dbPlaylist[2]]),
-            new User(2, 'user2', '123', 'Nguyen Van B', '#', [this.dbPlaylist[1], this.dbPlaylist[3], this.dbPlaylist[3], this.dbPlaylist[3]]),
-            new User(3, 'user3', '123', 'Nguyen Van C', '#', [this.dbPlaylist[2], this.dbPlaylist[1]]),
-            new User(4, 'user4', '123', 'Nguyen Van D', '#', [this.dbPlaylist[3], this.dbPlaylist[0]]),
+            new User(1, 'user1', '123456', 'Nguyen Van A', '#', [this.dbPlaylist[0], this.dbPlaylist[2]]),
+            new User(2, 'user2', '123456', 'Nguyen Van B', '#', [this.dbPlaylist[1], this.dbPlaylist[3], this.dbPlaylist[3], this.dbPlaylist[3]]),
+            new User(3, 'user3', '123456', 'Nguyen Van C', '#', [this.dbPlaylist[2], this.dbPlaylist[1]]),
+            new User(4, 'user4', '123456', 'Nguyen Van D', '#', [this.dbPlaylist[3], this.dbPlaylist[0]]),
         ];
 
         this.dbArtist = [

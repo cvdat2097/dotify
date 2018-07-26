@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { SongComponent } from './shared/components/song/song.component';
 import { CreatePlaylistComponent } from './playlists/create-playlist/create-playlist.component';
 import { AddToPlaylistComponent } from './playlists/add-to-playlist/add-to-playlist.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +40,14 @@ import { AddToPlaylistComponent } from './playlists/add-to-playlist/add-to-playl
     PlaylistsComponent,
     SongComponent,
     CreatePlaylistComponent,
-    AddToPlaylistComponent
+    AddToPlaylistComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]

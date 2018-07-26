@@ -3,6 +3,7 @@ import { Song } from '../../shared/model/song';
 import { DatabaseService } from '../../shared/services/database.service';
 import { Playlist } from '../../shared/model/playlist';
 import { User } from '../../shared/model/user';
+import { ModalService } from '../../shared/services/modal.service';
 
 @Component({
   selector: 'app-add-to-playlist',
@@ -17,7 +18,10 @@ export class AddToPlaylistComponent implements OnInit {
 
   user: User;
 
-  constructor(private dbService: DatabaseService) {
+  constructor(
+    private dbService: DatabaseService,
+    private mdService: ModalService
+  ) {
   }
 
   ngOnInit() {
@@ -31,8 +35,6 @@ export class AddToPlaylistComponent implements OnInit {
   }
 
   CloseModal() {
-    this.closeModalEvent.emit({
-      selector: ''
-    });
+    this.mdService.HideModal();
   }
 }

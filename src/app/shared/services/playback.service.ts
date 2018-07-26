@@ -16,6 +16,12 @@ export class PlaybackService {
 
     // Observable
     AddToQueue(song: Song, play: boolean = false) {
+        // TODO - Bug: CurrentSong in queue
+        if (this.queue.IsEmpty() || play) {
+
+            this.SendToPlayer(song);
+        }
+
         if (!this.queue.HaveSong(song)) {
             this.queue.AddSong(song);
         } else {
@@ -23,12 +29,7 @@ export class PlaybackService {
                 console.log('This song is currently in the queue');
             }
         }
-
-        if (this.queue.IsEmpty() || play) {
-            this.SendToPlayer(song);
-        }
     }
-
 
     SendToPlayer(song: Song) {
         this.songsToPlay.next(song);

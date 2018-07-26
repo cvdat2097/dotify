@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Sign up</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+        <div class="form-group">
+            <h2>Account</h2>
+            <div class="form-group" formGroupName="account">
+                <label>Username</label>
+                <input type="text" formControlName="username">
+                <div class="warning-text" *ngIf="_username.invalid && _username.dirty">
+                    <div *ngIf="_username.errors.required">Username is required!</div>
+                    <div *ngIf="_username.errors.minlength">Username must be more than 5 characters</div>
+                </div>
+
+                <br>
+
+                <label>Password</label>
+                <input type="password" formControlName="password">
+                <div class="warning-text" *ngIf="_password.invalid && _password.dirty">
+                    <div *ngIf="_password.errors.required">Password is required!</div>
+                    <div *ngIf="_password.errors.minlength">Password must be more than 6 characters</div>
+                </div>
+            </div>
+
+            <h2>Personal info</h2>
+            <div class="form-group" formGroupName="personalInfo">
+                <label>Name</label>
+                <input type="text" formControlName="name">
+                <div class="warning-text" *ngIf="_name.invalid && _name.dirty">
+                    <div *ngIf="_name.errors.required">Name is required!</div>
+                </div>
+
+                <br>
+
+                <label>Email</label>
+                <input type="text" formControlName="email">
+                <div class="warning-text" *ngIf="_email.invalid && _email.dirty">
+                    <div *ngIf="_email.errors.required">Email is required!</div>
+                    <div *ngIf="_email.errors.email">Email is invalid!</div>
+                </div>
+
+                <br>
+
+                <label>Phone</label>
+                <input type="text" formControlName="phone" placeholder="optional">
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="signupForm.invalid">Register</button>
+        <button type="button" (click)="CloseModal()">Cancel</button>
+    </form>
+</div>

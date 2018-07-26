@@ -15,7 +15,12 @@
 
         <!-- LOGIN -->
         <div class="login">
-            <button>LOGIN</button>
+            <button (click)="ShowModal('app-login')">LOGIN</button>
+
+            <!-- SIGNUP -->
+            <div class="signup">
+                <button (click)="ShowModal('app-signup')">SIGNUP</button>
+            </div>
         </div>
     </header>
 
@@ -66,6 +71,8 @@
         <div class="modal-container" [ngSwitch]="modal">
             <app-create-playlist *ngSwitchCase="'app-create-playlist'" (onCloseModal)="HideModal($event)"></app-create-playlist>
             <app-add-to-playlist [song]="modalParams" [userID]="1" *ngSwitchCase="'app-add-to-playlist'" (onCloseModal)="HideModal($event)"></app-add-to-playlist>
+            <app-login *ngSwitchCase="'app-login'"></app-login>
+            <app-signup *ngSwitchCase="'app-signup'"></app-signup>
         </div>
     </div>
 </div>

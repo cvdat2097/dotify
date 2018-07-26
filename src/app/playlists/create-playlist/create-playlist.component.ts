@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatabaseService } from '../../shared/services/database.service';
+import { ModalService } from '../../shared/services/modal.service';
 
 @Component({
   selector: 'app-create-playlist',
@@ -10,7 +11,10 @@ export class CreatePlaylistComponent implements OnInit {
   @Output('onCloseModal') closeModalEvent = new EventEmitter();
   x: string;
 
-  constructor(private dbService: DatabaseService) { }
+  constructor(
+    private dbService: DatabaseService,
+    private mdService: ModalService
+  ) { }
 
   ngOnInit() {
   }
@@ -21,7 +25,7 @@ export class CreatePlaylistComponent implements OnInit {
   }
 
   CloseModal() {
-    this.closeModalEvent.emit(true);
+    this.mdService.HideModal()
   }
 
 }
