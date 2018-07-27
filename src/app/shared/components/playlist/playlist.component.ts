@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import { Playlist } from '../../model/playlist';
+import { Song } from '../../model/song';
+import { PlaybackService } from '../../services/playback.service';
 
 @Component({
   selector: 'app-playlist',
@@ -10,6 +12,6 @@ import { Playlist } from '../../model/playlist';
 export class PlaylistComponent {
   @Input('playlist') playlist: Playlist; 
   
-  constructor() { }
-
+  constructor() {
+   }
 }

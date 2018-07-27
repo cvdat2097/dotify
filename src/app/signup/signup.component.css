@@ -1,14 +1,15 @@
-.container {
+.wrapper {
     width: 500px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+
+    background-color: white;
 }
 
-.container  * {
+.wrapper  * {
     margin: 10px;
 }
 

@@ -14,12 +14,7 @@ export class SongsComponent {
     songs: Song[] = this.dbService.GetSongs();
 
     constructor(
-        private dbService: DatabaseService, 
-        private mdService: ModalService,
-        private pbService: PlaybackService
+        private dbService: DatabaseService
     ) { }
 
-    AddToPlaylist(song: Song) {
-        this.mdService.ShowModal('app-add-to-playlist', song);
-    }
 }

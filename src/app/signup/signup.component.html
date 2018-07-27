@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
     <h1>Sign up</h1>
     <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
         <div class="form-group">
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <button type="submit" [disabled]="signupForm.invalid">Register</button>
-        <button type="button" (click)="CloseModal()">Cancel</button>
+        <button class="waves-effect waves-light btn blue" type="submit" [disabled]="signupForm.invalid">Register</button>
+        <button class="waves-effect waves-light btn orange" type="button" (click)="CloseModal()">Cancel</button>
     </form>
 </div>

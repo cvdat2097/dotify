@@ -18,7 +18,7 @@ import { DatabaseService } from './shared/services/database.service';
 import { BackgroundImageDirective } from './shared/directives/background-image.directive';
 import { PlaylistComponent } from './shared/components/playlist/playlist.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
-import { SongComponent } from './shared/components/song/song.component';
+import { SongComponent } from './songs/song/song.component';
 import { CreatePlaylistComponent } from './playlists/create-playlist/create-playlist.component';
 import { AddToPlaylistComponent } from './playlists/add-to-playlist/add-to-playlist.component';
 import { SignupComponent } from './signup/signup.component';

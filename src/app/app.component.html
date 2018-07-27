@@ -1,36 +1,40 @@
-<div class="container">
+<div class="wrapper">
     <!-- HEADER -->
-    <header>
+    <div class="header">
         <!-- LOGO -->
         <div class="logo">
             <h1>
-                <a routerLink="/">Dotify</a>
+                <a routerLink="/">
+                    <i class="medium material-icons blue-text">library_music</i>
+                    <b> D</b>otify
+                </a>
             </h1>
         </div>
 
         <!-- CREATE NEW PLAYLIST -->
         <div *ngIf="loggedInUser">
-            <button (click)="ShowModal('app-create-playlist')">Create playlist</button>
+            <button class="waves-effect waves-light btn blue" (click)="ShowModal('app-create-playlist')">
+                <i class="material-icons left">playlist_add</i> Create playlist</button>
         </div>
 
         <!-- LOGIN -->
         <div class="login" *ngIf="loggedInUser">
             <p>Hello, {{loggedInUser.name}}</p>
-            <button (click)="Logout()">LOGOUT</button>
+            <button class="waves-effect waves-light btn red" (click)="Logout()">LOGOUT</button>
 
         </div>
         <div class="login" *ngIf="!loggedInUser">
-            <button (click)="ShowModal('app-login')">LOGIN</button>
+            <button class="waves-effect waves-light btn blue" (click)="ShowModal('app-login')">LOGIN</button>
 
             <!-- SIGNUP -->
             <div class="signup">
-                <button (click)="ShowModal('app-signup')">SIGNUP</button>
+                <button class="waves-effect waves-light btn green" (click)="ShowModal('app-signup')">SIGNUP</button>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- NAV BAR -->
-    <div class="nav-container">
+    <div class="nav-wrapper">
         <app-navbar></app-navbar>
     </div>
 
@@ -40,13 +44,13 @@
     </div>
 
     <!-- PLAYBACK BAR -->
-    <div class="mp3-player-container">
+    <div class="mp3-player-wrapper">
         <app-mp3-player></app-mp3-player>
     </div>
 
     <!-- MODALS -->
     <div class="modal-overlay" *ngIf="modal" (click)="HideModal($event);">
-        <div class="modal-container" [ngSwitch]="modal">
+        <div class="modal-wrapper" [ngSwitch]="modal">
             <app-create-playlist *ngSwitchCase="'app-create-playlist'" (onCloseModal)="HideModal($event)"></app-create-playlist>
             <app-add-to-playlist [song]="modalParams" *ngSwitchCase="'app-add-to-playlist'" (onCloseModal)="HideModal($event)"></app-add-to-playlist>
             <app-login *ngSwitchCase="'app-login'"></app-login>

@@ -1,8 +1,8 @@
-<div class="container">
-    <div *ngIf="!(myPlaylists.length)">
-        You have no playlist!
+<div class="wrapper">
+    <div class="message" *ngIf="!(myPlaylists.length)">
+        <h2>You have no playlist</h2>
     </div>
-    <div class="playlist-container" *ngFor="let playlist of myPlaylists">
+    <div class="playlist-wrapper" *ngFor="let playlist of myPlaylists">
         <app-playlist [playlist]="playlist"></app-playlist>
     </div>
 </div>

@@ -1,9 +1,35 @@
 /* NAV */
-nav {
+.nav {
     height: 100%;
+    padding-top: 30px;
+    display:flex;
+    justify-content: center;
+
+    background-color: white;
 }
 
-nav ul {
+.nav ul {
     list-style-type: none;
-    padding: 10px;
+    width: 100%;
+}
+
+li {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+i {
+    font-size: 30px;
+}
+
+.current-selected {
+    border-right: 5px solid #2196F3;
+}
+
+.current-selected i {
+    color: #2196F3;
+    font-size: 2.5em;
 }

@@ -1,18 +1,5 @@
-<div class="container">
-    <div class="song-container" *ngFor="let song of songs; let i = index">
-        <div class="song-id">
-            {{i + 1}}
-        </div>
-        <div class="song-name">
-            {{song.name}}
-        </div>
-        <div class="song-artist">
-            {{song.artistName}}
-        </div>
-        <div class="play-button">
-            <button (click)="this.pbService.AddToQueue(song, true)">Play</button>
-            <button (click)="this.pbService.AddToQueue(song)">+Queue</button>
-            <button (click)="AddToPlaylist(song)">+Playlist</button>
-        </div>
+<div class="wrapper">
+    <div class="song-wrapper" *ngFor="let song of songs; let i = index">
+        <app-song [song]="song"></app-song>
     </div>
 </div>

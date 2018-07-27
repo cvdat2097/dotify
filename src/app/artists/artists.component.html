@@ -1,18 +1,20 @@
-<div class="container">
+<div class="wrapper">
     <div class="item-box" *ngFor="let artist of artists">
         <div class="image-box">
-            <a routerLink="/artists/detail" [queryParams]="{id: artist.id}">
-                <img src="{{ artist.avatarURL }}" alt="">
+            <a routerLink="/artists/detail" [queryParams]="{id: artist.id - 1}">
+                <div class="image" [ngStyle]="{'background-image': 'url('+artist.avatarURL+')'}" alt=""></div>
             </a>
         </div>
         <div class="detail-box">
-            <h3>
+            <h2>
                 <a routerLink="/artists/detail" [queryParams]="{id: artist.id}">{{artist.name}}</a>
-            </h3>
-            <div class="category-box" *ngFor="let category of artist.categories">
+            </h2>
+            <div class="btn waves-effect waves-light grey black-text lighten-3 category-box" *ngFor="let category of artist.categories">
                 {{category}}
             </div>
+            <div class="see-artist-button">
+                <button class="btn waves-effect waves-light blue" routerLink="/artists/detail" [queryParams]="{id: artist.id}">See artist</button>
+            </div>
         </div>
-        <a routerLink="/artists/detail" [queryParams]="{id: artist.id}">See artist</a>
     </div>
 </div>

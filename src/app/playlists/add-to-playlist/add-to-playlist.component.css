@@ -1,4 +1,4 @@
-.container {
+.wrapper {
     width: 500px;
     height: 350px;
 
@@ -9,7 +9,7 @@
     flex-direction: column;
 }
 
-.container  * {
+.wrapper  * {
     margin: 10px;
 }
 

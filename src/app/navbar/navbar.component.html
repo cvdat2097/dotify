@@ -1,25 +1,35 @@
 <!-- NAVIGATION BAR -->
-<nav>
+<div class="nav">
     <ul>
-        <li>
-            <a routerLink="/artists">Artists</a>
+        <li [class.current-selected]="currentSelected == 1">
+            <a routerLink="/artists" (click)="SetCurrentSelected(1)">
+                <i class="material-icons">album</i>
+            </a>
         </li>
         <br />
-        <li>
-            <a routerLink="/songs">Songs</a>
+        <li [class.current-selected]="currentSelected == 2">
+            <a routerLink="/songs" (click)="SetCurrentSelected(2)">
+                <i class="material-icons">audiotrack</i>
+            </a>
         </li>
         <br />
-        <li>
-            <a routerLink="/queue">Queue</a>
+        <li [class.current-selected]="currentSelected == 3">
+            <a routerLink="/queue"  (click)="SetCurrentSelected(3)">
+                <i class="material-icons">queue_music</i>
+            </a>
         </li>
         <br />
-        <li>
-            <a routerLink="/playlists">Playlists</a>
+        <li [class.current-selected]="currentSelected == 4">
+            <a routerLink="/playlists" (click)="SetCurrentSelected(4)">
+                <i class="material-icons">headset</i>
+            </a>
         </li>
         <br />
-        <li>
-            <a routerLink="/my-playlist">My Playlist</a>
+        <li [class.current-selected]="currentSelected == 5">
+            <a routerLink="/my-playlist" (click)="SetCurrentSelected(5)">
+                <i class="material-icons">favorite</i>
+            </a>
         </li>
         <br />
     </ul>
-</nav>
+</div>

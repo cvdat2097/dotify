@@ -1,24 +1,37 @@
-.container {
+h1 {
+    margin: 0 !important;
+    font-size: 3em;
+    font-family: 'Sunflower', sans-serif;
+}
+h1 a i {
+    font-size: 30px;
+}
+button {
+    margin-left: 10px;
+}
+
+.wrapper {
     height: 100%;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 70px 1fr;
     grid-template-rows: 80px 1fr 60px;
     overflow: hidden;
 }
 
 /* HEADER */
-header {
-    width: 100%;
-    display: flex;
+.header {
     grid-column: 1 / span 2;    
     box-shadow: 4px 6px 20px 5px rgba(0,0,0,.1);
     z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
-header * {
-    color: #1B76C4;
-}
+
 
 .login {
     display: flex;
@@ -26,7 +39,7 @@ header * {
 }
 
 /* NAVBAR */
-.nav-container {
+.nav-wrapper {
     grid-column: 1;
     grid-row: 2 / span 2;
     box-shadow: 10px 14px 20px 5px rgba(0,0,0,.1);
@@ -37,10 +50,11 @@ header * {
 .content {
     grid-column: 2;
     overflow: auto;
+    padding: 25px;
 }
 
 /* PLAYBACK BAR */
-.mp3-player-container {
+.mp3-player-wrapper {
     width: 100%;
     grid-row: 3;
     grid-column: 1 / span 2;
@@ -64,7 +78,7 @@ header * {
     justify-content: center;
 }
 
-.modal-container {
+.modal-wrapper {
     z-index: 100;
     box-shadow: 5px 5px 15px rgba(0,0,0);
 }

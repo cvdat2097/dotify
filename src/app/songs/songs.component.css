@@ -1,12 +1,7 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.wrapper {
+    width: 100%;
 }
 
-.song-container {
+.song-wrapper {
     margin: 3px;
-
-    display: flex;
-    justify-content: space-between;
 }

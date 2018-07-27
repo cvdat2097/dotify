@@ -1,0 +1,44 @@
+
+/* SONG */
+.song-wrapper {
+    width: 100%;
+    min-height: 50px;
+    display:grid;
+    grid-template-columns: 120px 1fr 10%;
+
+    border-top: 1px solid rgba(128, 128, 128, 0.24);
+}
+
+.song-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-name {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 1.2em;
+}
+
+.song-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-play-song {
+    margin-right: 10px;
+}
+.button-play-song:hover {
+    cursor: pointer;
+}
+
+.btn-more {
+    box-shadow: 0 0 0 transparent;
+    background-color: transparent !important;
+}
+.btn-more i{
+    color: #454545 !important;
+}

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
   <!-- HEADER -->
   <div class="playlist-header">
     <!-- AVATAR -->
@@ -9,34 +9,26 @@
     <!-- INFO -->
     <div class="playlist-info">
       <h3>{{playlist.name}}</h3>
-      <p>{{playlist.description}}</p>
-      <p>Like: {{playlist.likes}}</p>
-      <p>Played: {{playlist.playbackTimes}}</p>
+      <p id="playlist-description">{{playlist.description}}</p>
+      <div class="playlist-status">
+        {{playlist.likes}}
+        <i class="material-icons">thumb_up</i>
+        {{playlist.playbackTimes}}
+        <i class="material-icons">settings_backup_restore</i>
+      </div>
     </div>
-
     <!-- PLAYBACK CONTROLLER -->
     <div class="playlist-controller">
-      <button>PLAY</button>
+      <button class="btn-floating waves-effect waves-light blue">
+        <i class="material-icons">play_arrow</i>
+      </button>
     </div>
   </div>
 
   <!-- SONG LIST -->
   <div class="playlist-songs">
-    <div class="song-container" *ngFor="let song of playlist.songs">
-      <!-- BUTTON -->
-      <div class="song-button">
-        <button>PLAY</button>
-      </div>
-
-      <!-- SONG NAME -->
-      <div class="song-name">
-        {{song.name}}
-      </div>
-
-      <!-- MENU -->
-      <div class="song-menu">
-        <button>...</button>
-      </div>
-    </div>
+    <ng-container *ngFor="let song of playlist.songs">
+      <app-song [song]="song"></app-song>
+    </ng-container>
   </div>
 </div>

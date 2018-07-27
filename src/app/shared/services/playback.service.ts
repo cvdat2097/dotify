@@ -7,7 +7,7 @@ import { Subject, Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class PlaybackService {
-    queue: Playlist = new Playlist(0, 'queue', 'Now playing...');
+    queue: Playlist = new Playlist(0, 'Queue', 'Now playing...',[],'/assets/images/queue.jpg');
     songsToPlay: Subject<Song> = new Subject<Song>();
     currentSong: number = 0;
 

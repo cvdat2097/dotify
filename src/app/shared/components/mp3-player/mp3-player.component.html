@@ -1,13 +1,24 @@
-<div class="container">
+<div class="wrapper">
     <div class="song-info" *ngIf="song">
         <p>{{song.name}}</p>
     </div>
 
-    <button id="previous-button" (click)="PreviousSong()">&lt;&lt;</button>
-    <button id="play-pause-button" (click)="TogglePlay()">Play/Pause</button>
-    <button id="next-button" (click)="NextSong()">&gt;&gt;</button>
-    <a id="queue-button" routerLink="/queue">Now Playing</a>
-    <input id="volume-slider" type="range" min="1" max="100" value="{{volume}}" (input)="ChangeVolume($event)">
+    <button class="btn-floating waves-effect waves-light" id="previous-button" (click)="PreviousSong()">
+        <i class="material-icons">skip_previous</i>
+    </button>
+    <button id="play-pause-button" class="btn-floating waves-effect waves-light blue" (click)="TogglePlay()">
+        <i *ngIf="!isPlaying" class="material-icons">play_arrow</i>
+        <i *ngIf="isPlaying" class="material-icons">pause</i>
+    </button>
+    <button class="btn-floating waves-effect waves-light" id="next-button" (click)="NextSong()">
+        <i class="material-icons">skip_next</i>
+    </button>
+    <a id="queue-button" routerLink="/queue">.
+        <i class="material-icons">playlist_play</i>
+    </a>
+    <div id="volumn-slider">
+        <input type="range" min="1" max="100" value="{{volume}}" (input)="ChangeVolume($event)">
+    </div>
 </div>
 
 <audio #mp3File>

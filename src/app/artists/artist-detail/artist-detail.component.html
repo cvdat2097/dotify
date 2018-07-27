@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
     <!-- Banner -->
     <div class="banner" *ngIf="artist" [background-image]="artist.avatarURL">
         <h2>{{artist.name}}</h2>
@@ -7,7 +7,7 @@
     </div>
 
     <!-- ALBUMS -->
-    <div class="albums-container" *ngFor="let album of artist.albums">
+    <div class="albums-wrapper" *ngFor="let album of artist.albums">
         <app-playlist [playlist]="album"></app-playlist>
     </div>
 

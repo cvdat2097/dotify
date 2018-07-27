@@ -1,0 +1,26 @@
+<div class="song-wrapper">
+  <!-- BUTTON -->
+  <div class="song-button">
+    <a class="button-play-song" (click)="PlaySong(song)">
+      <i class="material-icons">play_circle_outline</i>
+    </a>
+    <a class="button-play-song" (click)="AddToQueue(song)">
+      <i class="material-icons">playlist_play</i>
+    </a>
+    <a class="button-play-song" (click)="AddToPlaylist(song)">
+        <i class="material-icons">playlist_add</i>
+      </a>
+  </div>
+
+  <!-- SONG NAME -->
+  <div class="song-name">
+    <span>{{song.name}}</span>
+  </div>
+
+  <!-- MENU -->
+  <div class="song-menu">
+    <button class="btn-floating waves-effect waves-light btn-more">
+      <i class="material-icons">more_vert</i>
+    </button>
+  </div>
+</div>
