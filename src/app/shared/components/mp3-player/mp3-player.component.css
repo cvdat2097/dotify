@@ -3,10 +3,8 @@
     height: 100%;
 
     align-items: center;
-    justify-content: center;
-    background-color: #303030;    
+    justify-content: center;  
 }
 
 .container * {
-    background-color: #303030;
 }

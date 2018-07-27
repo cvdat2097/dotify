@@ -44,6 +44,7 @@
         <app-mp3-player></app-mp3-player>
     </div>
 
+    <!-- MODALS -->
     <div class="modal-overlay" *ngIf="modal" (click)="HideModal($event);">
         <div class="modal-container" [ngSwitch]="modal">
             <app-create-playlist *ngSwitchCase="'app-create-playlist'" (onCloseModal)="HideModal($event)"></app-create-playlist>
