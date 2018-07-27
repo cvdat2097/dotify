@@ -6,7 +6,6 @@
 
 .playlist-header {
     width: 100%;
-    border: 2px dotted sandybrown;
     
     display: flex;
     justify-content: space-between;
@@ -16,7 +15,6 @@
     flex-grow: 2;
     max-width: 200px;
 
-    border: 1px solid dodgerblue;
 }
 .playlist-avatar img {
     width: 100%;
@@ -24,12 +22,10 @@
 
 .playlist-info {
     flex-grow: 6;
-    border: 1px solid darkmagenta;
 }
 
 .playlist-controller {
     flex-grow: 1;
-    border: 1px solid seagreen;
 }
 
 
@@ -40,13 +36,11 @@
 
 .song-container {
     width: 100%;
-    border: 1px solid red;
     
     display: flex;
 }
 
 .song-button {
-    border: 1px solid darkcyan;
 
     flex-grow: 1;
     display: flex;
@@ -54,7 +48,6 @@
 }
 
 .song-name {
-    border: 1px solid darkcyan;
 
     padding: 10px;
 
@@ -62,7 +55,6 @@
 }
 
 .song-menu {
-    border: 1px solid darkcyan;
 
     flex-grow: 1;
     display: flex;

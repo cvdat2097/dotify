@@ -29,32 +29,10 @@
         </div>
     </header>
 
-
-    <!-- NAVIGATION BAR -->
-    <nav>
-        <ul>
-            <li>
-                <a routerLink="/artists">Artists</a>
-            </li>
-            <br />
-            <li>
-                <a routerLink="/songs">Songs</a>
-            </li>
-            <br />
-            <li>
-                <a routerLink="/queue">Queue</a>
-            </li>
-            <br />
-            <li>
-                <a routerLink="/playlists">Playlists</a>
-            </li>
-            <br />
-            <li>
-                <a routerLink="/my-playlist">My Playlist</a>
-            </li>
-            <br />
-        </ul>
-    </nav>
+    <!-- NAV BAR -->
+    <div class="nav-container">
+        <app-navbar></app-navbar>
+    </div>
 
     <!-- CONTENT -->
     <div class="content">
@@ -66,12 +44,6 @@
         <app-mp3-player></app-mp3-player>
     </div>
 
-    <!-- MODAL -->
-    <!-- <div class="modal-overlay" *ngIf="showModal" (click)="HideModal($event);">
-        <div class="modal-container">
-            <app-create-playlist #modal (onCloseModal)="HideModal($event)"></app-create-playlist>
-        </div>
-    </div> -->
     <div class="modal-overlay" *ngIf="modal" (click)="HideModal($event);">
         <div class="modal-container" [ngSwitch]="modal">
             <app-create-playlist *ngSwitchCase="'app-create-playlist'" (onCloseModal)="HideModal($event)"></app-create-playlist>

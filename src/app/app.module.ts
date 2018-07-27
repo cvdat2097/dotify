@@ -22,6 +22,7 @@ import { SongComponent } from './shared/components/song/song.component';
 import { CreatePlaylistComponent } from './playlists/create-playlist/create-playlist.component';
 import { AddToPlaylistComponent } from './playlists/add-to-playlist/add-to-playlist.component';
 import { SignupComponent } from './signup/signup.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SignupComponent } from './signup/signup.component';
     SongComponent,
     CreatePlaylistComponent,
     AddToPlaylistComponent,
-    SignupComponent
+    SignupComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

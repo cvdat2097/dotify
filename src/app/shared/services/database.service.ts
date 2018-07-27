@@ -101,6 +101,7 @@ export class DatabaseService {
             new User(2, 'user2', '123456', 'Nguyen Van B', '#', [this.dbPlaylist[1], this.dbPlaylist[3], this.dbPlaylist[3], this.dbPlaylist[3]]),
             new User(3, 'user3', '123456', 'Nguyen Van C', '#', [this.dbPlaylist[2], this.dbPlaylist[1]]),
             new User(4, 'user4', '123456', 'Nguyen Van D', '#', [this.dbPlaylist[3], this.dbPlaylist[0]]),
+            new User(5, 'bamboak', '123456', 'Cao Vo Dat', '#'),
         ];
 
         this.dbArtist = [
@@ -130,6 +131,55 @@ export class DatabaseService {
                 ['Jazz', 'House', 'Country'],
                 'assets/images/artists/4.jpg',
                 [this.dbPlaylist[3], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
+                [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
+            ),
+            new Artist(5, 'Mark Ronson',
+                'Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding',
+                ['Jazz', 'House', 'Country'],
+                'assets/images/artists/5.jpg',
+                [this.dbPlaylist[2], this.dbPlaylist[1], this.dbPlaylist[3]],
                 [this.dbUser[0], this.dbUser[2], this.dbUser[3]]
             ),
             new Artist(5, 'Mark Ronson',

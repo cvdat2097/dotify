@@ -1,9 +1,12 @@
 .container {
-    border: 1px solid yellowgreen;
     display: flex;
     height: 100%;
-    display: flex;
+
     align-items: center;
     justify-content: center;
+    background-color: #303030;    
 }
 
+.container * {
+    background-color: #303030;
+}

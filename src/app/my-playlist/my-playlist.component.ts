@@ -17,7 +17,6 @@ export class MyPlaylistComponent {
         private dbService: DatabaseService,
         private svService: ServerService
     ) {
-        this.dbService.SignUp('bamboak', '123456', 'Dat', '#');
         this.svService.GetLoggedUser().subscribe(
             (user: User) => {
                 if (user != null) {
